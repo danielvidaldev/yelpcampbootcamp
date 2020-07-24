@@ -37,7 +37,7 @@ app.use(function(req, res, next){
     next();
 });
 
-mongoose.connect("mongodb+srv://danielvidal:<olondongo999>@cluster0.bo3l9.azure.mongodb.net/<dbname>?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://danielvidal:<olondongo999>@cluster0.bo3l9.azure.mongodb.net/<dbname>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
