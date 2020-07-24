@@ -37,7 +37,7 @@ app.use(function(req, res, next){
     next();
 });
 
-mongoose.connect(process.env.DATABASEURL)
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true } )
 // mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 // mongoose.connect("mongodb+srv://danielvidal:<password>@cluster0.bo3l9.azure.mongodb.net/<dbname>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
