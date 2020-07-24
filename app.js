@@ -37,7 +37,7 @@ app.use(function(req, res, next){
     next();
 });
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://DanielVidal:<olondongo999!>@cluster0.bo3l9.azure.mongodb.net/<dbname>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
