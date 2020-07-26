@@ -37,7 +37,7 @@ app.use(function(req, res, next){
     next();
 });
 
-mongoose.connect("mongodb+srv://danielvidal:<olondongo999>@cluster0.bo3l9.azure.mongodb.net/<dbname>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+mongoose.connect("mongodb+srv://danielvidal:<olondongo999>@cluster0.bo3l9.azure.mongodb.net/<dbname>?retryWrites=true&w=majority");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -50,7 +50,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-var port = process.env.PORT || 5000;
-app.listen(port, function () {
-    console.log("Yelpcamp server has started!");
-});
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("The YelpCamp Server Has Started!");
+ });
